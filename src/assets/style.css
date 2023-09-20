@@ -1,0 +1,584 @@
+/* Root rules to tay consistent with styles all around */
+
+:root{ 
+	/*-Font Size Rules */
+	--extra-extra-large: 72px;
+	--extra-large: 56px;
+	--large: 48px;
+	--moderate: 40px;
+	--medium: 32px;
+	--small: 24px;
+	--tiny: 16px;
+
+	/*-Color Rules  */
+	--black: #181616;
+	--white: #fafafa;
+
+
+}
+
+/*---CSS Desktop Prefix---*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;600;800&display=swap'); /* Header Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;1,300;1,400;1,600&display=swap'); /*Body Font */
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	font-family:'Montserrat',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin: 0;
+	font: 100%;
+	background-color: var(--white);
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+	font-family: 'Inter Tight',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: var(--black);
+}
+
+p{
+	font-size: var(--small)
+}
+
+a{
+	text-decoration: none;
+}
+
+.container{
+	width: 75%;
+	align-items: center;
+	margin: 0 auto;	
+}
+
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/*---Special Stylistic Global Rule--- */
+
+.o-line{
+	text-decoration: line-through;  
+	/* This line enables a quirky stylistic choice for the adding a line through to every header or choice of elements applying a strike through to the letter "O" */
+}
+
+/*---Header Styles---*/
+
+header{
+	padding-bottom: 40vh;
+}
+
+.logo-and-nav {
+	padding-top: 2vh;
+	padding-bottom: 1.5vh;
+	display: flex;
+	z-index: 10;
+	position: fixed;
+	width: 100%;
+	margin-top: -2.2vh;
+
+/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 0 ,0 , 22px, 22px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+}
+
+.site-logo{
+	font-size: 42px;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-family: 'Inter Tight',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: var(--black);
+	z-index: 1; /* My site's logo, chose the element as a span rather than an h1 tag*/
+}
+
+header nav{
+	z-index: 1;
+	float: right;
+}
+
+header ul{
+	padding-top: 1.3vh;
+}
+
+	/*Navigation*/
+nav li {
+	list-style-type: none;
+	display: inline;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+	font-size: var(--small);
+	padding: 8px
+}
+
+nav li:last-child{
+	padding: 0;
+}
+
+header a{
+	text-transform: uppercase;
+	color: var(--black);
+	font-weight: 600;
+	justify-content: space-between;
+}
+
+
+header a, header:visited{
+	transition-duration: 0.65s;
+}
+
+	/*Chose to have all header anchor to hover interact to save some line of code */
+header a:hover, header a:active:hover{
+	transition-duration: 0.65s;
+	text-shadow: 1px 2px rgba(255,254,65,255);
+}
+
+	/*Header for the background video*/
+header h1{
+	z-index:1;
+	position: relative;
+	padding-top: 40vh;
+	font-size: var(--extra-extra-large);
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: rgba(190,66,0,255) ;
+	text-align: right;
+}
+
+header h1 .header-o{ 
+	/* This header o-line gets a different style blending it into a background of the video */
+	color: rgba(255,254,65,255)
+}
+
+header video { 
+	/*Had to get a help on this from multiple sources, video backgrounds are hard to position, 
+	I tried to get into a gif but it is rather pixelated, so I stuck it even with all the headache */
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	top: -2px;
+}
+
+/*---Main---*/
+
+	/*About*/
+
+.opener{
+	padding-top: 30vh;
+	padding-bottom: 23vh;
+}
+
+.opener-header h2{
+	float: left;
+	text-transform: uppercase;
+	font-size: var(--extra-large);
+}
+
+.opener-content{
+	padding-top: 5.8vh;
+	float: right;
+	text-align: left;
+	width:40%;
+	font-size: var(--small);
+	z-index: 1;
+	left: 50%;
+}
+
+.old-portfolio{
+	margin-top: 5vh;
+	float:left;
+}
+
+.old-portfolio img{
+	width: 600px;
+	height: 400px;
+	border-radius: 18px;
+	display: block;
+}
+.old-portfolio img, .old-portfolio:visited{
+	transition-duration: 0.65s;
+}
+
+.old-portfolio img:hover{
+	/* Hover interaction of the image  */
+	transition-duration: .65s;	
+	box-shadow:  0px 2px 20px var(--black);
+
+}
+	/*Project Section*/
+
+.projects{
+	padding-top: 10vh;
+	padding-bottom: 20vh;
+	overflow-x: hidden;
+}
+
+
+.projects h2{
+	font-size: var(--extra-large);
+	text-transform: uppercase;
+	padding-bottom: 3vh;
+}
+
+.projects p{
+	text-align: center;
+}
+
+.project-header-desc {
+	padding-bottom: 3vh;
+}
+
+.projects h3{
+	font-size: var(--moderate);
+	text-transform: uppercase;
+	padding-bottom: 2vh;
+	text-align: center;
+}
+
+.project-section-one{
+	display: flex;
+	animation: project-section-one 20000ms linear infinite ;
+}
+
+.project-section-two{
+	display: flex;
+	animation: project-select-two 20000ms reverse linear infinite;
+}
+
+
+.project-section-one:hover{
+	animation-play-state: paused;
+}
+
+.project-section-two:hover{
+	animation-play-state: paused;
+}
+
+.project-box{
+	border-radius: 42px;
+	background-image: url(./images/project-sample.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 320px;
+	height: 200px;
+	margin: 20px;
+}
+
+.project-box a{
+	border-radius: 42px;
+	padding-bottom: 178px;
+	padding-right: 315px;
+}
+
+.line-one{
+	
+	display: flex;
+}
+
+/* Named them lines due to the nature of the HTML structure rather of the way they are css relation animated*/
+
+.line-two{
+	display: flex;
+}
+
+/*  Keyframes animation allowing the project to scroll left to right or right
+	to left based om speed
+
+	This animation style I got from this link from stack overflow in regards of the infinite scrolls. https://stackoverflow.com/questions/45847392/pure-css-continuous-horizontal-text-scroll-without-break 
+
+	However there is a slight feature glitch where it seems to not reset as a n infinite loop. Plus the reverse linear seems to add padding for the second line.
+
+*/
+@keyframes project-section-one{
+	0% {
+		transform: translate(0%,0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+
+@keyframes project-select-two{
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+
+}
+
+.project-picks{
+	display: flex;
+}
+
+/*These are old projects from my old portfolio linked*/
+
+.project-one-old{
+	background-image: url(./images/project-one-bg.PNG);
+	background-position: center center;
+	background-size: cover;
+}
+
+.project-two-old{
+	background-image: url(./images/project-two-bg.PNG);
+	background-position: center center;
+	background-size: cover;
+}
+.project-three-old{
+	background-image: url(./images/project-three-bg.PNG);
+	background-position: center center;
+	background-size: cover;
+}
+.project-four-old{
+	background-image: url(./images/project-four-bg.PNG);
+	background-position: center center;
+	background-size: cover;
+}
+.project-five-old{
+	background-image: url(./images/project-five-bg.PNG);
+	background-position: center center;
+	background-size: cover;
+}
+
+/*---Footer---*/
+
+footer{
+	display: flex;
+	padding-bottom: 8vh;
+}
+
+footer h4{
+	font-size: var(--small);
+}
+
+footer ul{
+	width: 50%;
+	margin: 0;
+}
+
+footer li{
+	text-transform: uppercase;
+	display: block;
+}
+
+/*---Contact List ---*/
+
+
+
+.contact-list{
+	margin-left: auto;
+}
+
+.contact-list li{
+	list-style-type: none;
+	font-size: var(--small);
+	margin-top: 20px;
+}
+
+.contact-list a{
+	font-family: sans-serif;
+	text-decoration: none;
+	color: var(--black);
+	position: relative;
+	transition: all 1s;
+	overflow: hidden;
+	display: inline-block;
+}
+
+	/* A hover effect that I recycled from my old CSS Animation Project
+	
+	Hover effect for the contact list on the footer. This animation allows a swipe from top to bottom.
+	
+	*/
+
+.contact-list a:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background-color: rgba(255,254,65,255);
+	transform: translateY(-100%);
+	transition: all 1s;
+	border-bottom: 4px solid rgba(190,66,0,255);
+}
+
+.contact-list a:hover:before{
+	transform: translateY(0);
+}
+
+
+footer nav{
+	float: right;
+}
+
+/* Responsiveness Starts*/
+
+@media only screen and (min-width: 2560px){
+	.opener{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.opener-content{
+		padding-top: 10vh;
+		width: 60%;
+	}
+}
+
+
+	/* Responsiveness for typical laptop Large width with the same height and width */
+@media only screen and (max-width: 1400px){
+
+	header h1{
+		padding-top: 20vh;
+	}
+	.opener{
+		padding-top: 0;
+	}
+}
+
+
+@media only screen and (max-width: 1280px){
+
+	main{
+		padding-top: 30vh;
+	}
+
+	.opener-content{
+		width: 100%;
+	}
+}
+
+	/* Responsive Started For Laptops in 1025 width or possibly in Vertical Use in this dimensions*/
+@media only screen and (max-width: 1024px){
+
+	header a{
+		font-size: 20px;
+	}
+	header{
+		padding-bottom: 10vh;
+	}
+
+	header h1{
+		text-align: left;
+	}
+
+	main h1, h2, h3{
+		text-align: center;
+	}
+
+	main{
+		padding-top: 5vh;
+	}
+
+	.opener{
+		padding-top: 10vh;
+		padding-bottom: 14vh;
+	}
+
+	.opener-content{
+		width: 100%;
+		text-align: left;
+	}
+
+	.opener img{
+		justify-content: center
+	};
+
+}
+
+
+	/*Responsive Started For Devices With A Device Width of 820px */
+@media only screen and (max-width: 820px) {
+
+	header{
+		padding-bottom: 0;
+	}
+
+	header nav{
+		float: none;
+	}
+	
+	header h1{
+		padding-top: 20vh;
+	}
+
+	header video{
+		width: 110%;
+	}
+	main{
+		padding-top: 40vh;
+	}
+
+	.opener{
+		padding-top: 10vh;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	header h1{	
+	padding-top: 15vh;
+	font-size: 50px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+
+	.container{
+		width: 85%;
+	}
+
+	header video{
+		width: 200%;
+	}
+
+	header h1{
+		padding-top: 12vh;
+		float: right;
+		font-size: var(--moderate);
+	}
+
+	header ul{
+		padding-top: 0;
+	}
+
+	nav li {
+		font-size: 14px;
+		padding: 2px;
+	}
+
+	main{
+		padding-top: 10vh;
+	}
+
+	main p{
+		font-size: 16px;
+	}
+
+	.opener img{
+		width: 350px;
+		height:  200px;
+	}
+}
